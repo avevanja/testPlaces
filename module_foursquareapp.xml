@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_foursquareapp" default="compile.module.foursquareapp">
+  <dirname property="module.foursquareapp.basedir" file="${ant.file.module_foursquareapp}"/>
+  
+  <property name="module.jdk.home.foursquareapp" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.foursquareapp" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.foursquareapp" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.foursquareapp" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="foursquareapp.output.dir" value="${module.foursquareapp.basedir}/build/classes/production/FoursquareApp"/>
+  <property name="foursquareapp.testoutput.dir" value="${module.foursquareapp.basedir}/build/classes/test/FoursquareApp"/>
+  
+  <path id="foursquareapp.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="foursquareapp.module.production.classpath">
+    <path refid="${module.jdk.classpath.foursquareapp}"/>
+  </path>
+  
+  <path id="foursquareapp.runtime.production.module.classpath">
+    <pathelement location="${foursquareapp.output.dir}"/>
+  </path>
+  
+  <path id="foursquareapp.module.classpath">
+    <path refid="${module.jdk.classpath.foursquareapp}"/>
+    <pathelement location="${foursquareapp.output.dir}"/>
+  </path>
+  
+  <path id="foursquareapp.runtime.module.classpath">
+    <pathelement location="${foursquareapp.testoutput.dir}"/>
+    <pathelement location="${foursquareapp.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.foursquareapp">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.foursquareapp">
+    <patternset refid="excluded.from.module.foursquareapp"/>
+  </patternset>
+  
+  
+  <target name="compile.module.foursquareapp" depends="compile.module.foursquareapp.production,compile.module.foursquareapp.tests" description="Compile module FoursquareApp"/>
+  
+  <target name="compile.module.foursquareapp.production" depends="register.custom.compilers" description="Compile module FoursquareApp; production classes"/>
+  
+  <target name="compile.module.foursquareapp.tests" depends="register.custom.compilers,compile.module.foursquareapp.production" description="compile module FoursquareApp; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.foursquareapp" description="cleanup module">
+    <delete dir="${foursquareapp.output.dir}"/>
+    <delete dir="${foursquareapp.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FoursquareApp</string>
+    <string name="facebook_app_id">1234284903381753</string>
+    <string name="fb_login_protocol_scheme">fb1234284903381753</string>
+    <string name="cancel_login">Login was canceled</string>
+    <string name="login_with_facebook">LOGIN WITH FACEBOOK</string>
+</resources>
