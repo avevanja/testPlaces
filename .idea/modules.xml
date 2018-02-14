@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FoursquareApp.iml" filepath="$PROJECT_DIR$/FoursquareApp.iml" />
+      <module fileurl="file://C:\Users\aveva\testN-ix\testPlaces\FoursquareApp.iml" filepath="C:\Users\aveva\testN-ix\testPlaces\FoursquareApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testPlaces.iml" filepath="$PROJECT_DIR$/testPlaces.iml" />
     </modules>
   </component>
 </project>
