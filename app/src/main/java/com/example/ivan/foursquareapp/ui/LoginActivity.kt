@@ -59,9 +59,11 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
         toast(exception.localizedMessage)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        mCallbackManager!!.onActivityResult(requestCode, resultCode, data)
-        super.onActivityResult(requestCode, resultCode, data)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (data != null) {
+            mCallbackManager!!.onActivityResult(requestCode, resultCode, data)
+            super.onActivityResult(requestCode, resultCode, data)
+        }
     }
 
 }

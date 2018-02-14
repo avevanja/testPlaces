@@ -84,9 +84,8 @@ class PlacesActivity : MvpAppCompatActivity(), RecyclerAdapterPlaces.ItemClick, 
                         if (location != null) {
                             mPresenter.getPlaces(location.latitude, location.longitude)
                         } else {
-                            val gpsOptionsIntent = Intent(
-                                    android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-                            startActivity(gpsOptionsIntent)
+                            progressBar.visibility = View.GONE
+                            Toast.makeText(this, "Please, turn on GPS", Toast.LENGTH_SHORT).show()
                         }
                     })
         }
@@ -151,6 +150,8 @@ class PlacesActivity : MvpAppCompatActivity(), RecyclerAdapterPlaces.ItemClick, 
             }
             MY_PERMISSIONS_REQUEST_FINE_LOCATION -> if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getCurrentLocation()
+            } else{
+                progressBar.visibility = View.GONE
             }
         }
     }
