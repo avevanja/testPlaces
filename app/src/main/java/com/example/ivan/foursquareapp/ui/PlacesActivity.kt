@@ -10,6 +10,8 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
+import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.ivan.foursquareapp.R
@@ -18,6 +20,7 @@ import com.example.ivan.foursquareapp.presentation.places.PlacesPresenter
 import com.example.ivan.foursquareapp.presentation.places.PlacesView
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import kotlinx.android.synthetic.main.activity_places.*
 
 
 class PlacesActivity : MvpAppCompatActivity(), RecyclerAdapterPlaces.ItemClick, PlacesView {
@@ -131,8 +134,11 @@ class PlacesActivity : MvpAppCompatActivity(), RecyclerAdapterPlaces.ItemClick, 
 
     override fun getPlaces(list: List<ItemVenue>) {
         mAdapter!!.addVenues(list)
+        progressBar.visibility = View.GONE
     }
 
     override fun errorGetPlaces(message: String) {
+        progressBar.visibility = View.GONE
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
