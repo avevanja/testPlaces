@@ -1,4 +1,4 @@
-package com.example.ivan.foursquareapp
+package com.example.ivan.foursquareapp.utils
 
 
 object Constants {

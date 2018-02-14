@@ -10,14 +10,18 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.ivan.foursquareapp.R
-import com.example.ivan.foursquareapp.models.ItemVenue
+import com.example.ivan.foursquareapp.entity.ItemVenue
 import com.example.ivan.foursquareapp.presentation.places.PlacesPresenter
 import com.example.ivan.foursquareapp.presentation.places.PlacesView
+import com.example.ivan.foursquareapp.ui.adapters.RecyclerAdapterPlaces
+import com.example.ivan.foursquareapp.utils.setIsLogin
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import kotlinx.android.synthetic.main.activity_places.*
@@ -48,8 +52,28 @@ class PlacesActivity : MvpAppCompatActivity(), RecyclerAdapterPlaces.ItemClick, 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_places)
+        setSupportActionBar(toolbar)
         initRecyclerView()
         getCurrentLocation()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        val id = item!!.itemId
+        return if (id == R.id.action_logout) {
+            logOut()
+            true
+        } else super.onOptionsItemSelected(item)
+    }
+
+    private fun logOut() {
+        LoginActivity.start(this)
+        setIsLogin(false)
+        finish()
     }
 
     private fun getCurrentLocation() {

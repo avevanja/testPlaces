@@ -1,8 +1,8 @@
-package com.example.ivan.foursquareapp.data
+package com.example.ivan.foursquareapp.model.network
 
 
-import com.example.ivan.foursquareapp.models.DetailInfoResponse
-import com.example.ivan.foursquareapp.models.PlacesResponse
+import com.example.ivan.foursquareapp.entity.DetailInfoResponse
+import com.example.ivan.foursquareapp.entity.PlacesResponse
 
 import io.reactivex.Single
 import retrofit2.http.GET

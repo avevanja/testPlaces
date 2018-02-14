@@ -1,6 +1,7 @@
-package com.example.ivan.foursquareapp.data
+package com.example.ivan.foursquareapp.model.repository
 
-import com.example.ivan.foursquareapp.models.PlacesResponse
+import com.example.ivan.foursquareapp.entity.PlacesResponse
+import com.example.ivan.foursquareapp.model.network.RetrofitBuilder
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

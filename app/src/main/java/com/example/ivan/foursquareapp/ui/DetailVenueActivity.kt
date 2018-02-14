@@ -7,11 +7,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
-import com.example.ivan.foursquareapp.GlideApp
 import com.example.ivan.foursquareapp.R
-import com.example.ivan.foursquareapp.models.DetailVenue
-import com.example.ivan.foursquareapp.presentation.DetailInfoPresenter
-import com.example.ivan.foursquareapp.presentation.DetailInfoView
+import com.example.ivan.foursquareapp.entity.DetailVenue
+import com.example.ivan.foursquareapp.presentation.detailInfo.DetailInfoPresenter
+import com.example.ivan.foursquareapp.presentation.detailInfo.DetailInfoView
+import com.example.ivan.foursquareapp.ui.adapters.RecyclerAdapterTips
+import com.example.ivan.foursquareapp.utils.GlideApp
 import kotlinx.android.synthetic.main.activity_detail_venue.*
 
 

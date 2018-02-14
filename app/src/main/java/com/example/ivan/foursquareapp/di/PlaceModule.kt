@@ -1,7 +1,7 @@
 package com.example.ivan.foursquareapp.di
 
-import com.example.ivan.foursquareapp.data.DetailInfoRepository
-import com.example.ivan.foursquareapp.data.PlaceRepository
+import com.example.ivan.foursquareapp.model.repository.DetailInfoRepository
+import com.example.ivan.foursquareapp.model.repository.PlaceRepository
 import dagger.Module
 import dagger.Provides
 

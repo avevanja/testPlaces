@@ -1,4 +1,4 @@
-package com.example.ivan.foursquareapp.models
+package com.example.ivan.foursquareapp.entity
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

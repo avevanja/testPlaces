@@ -1,7 +1,7 @@
-package com.example.ivan.foursquareapp.data
+package com.example.ivan.foursquareapp.model.network
 
 
-import com.example.ivan.foursquareapp.Constants
+import com.example.ivan.foursquareapp.utils.Constants
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient

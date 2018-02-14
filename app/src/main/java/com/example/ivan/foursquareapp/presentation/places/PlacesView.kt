@@ -1,7 +1,7 @@
 package com.example.ivan.foursquareapp.presentation.places
 
 import com.arellomobile.mvp.MvpView
-import com.example.ivan.foursquareapp.models.ItemVenue
+import com.example.ivan.foursquareapp.entity.ItemVenue
 
 
 interface PlacesView : MvpView {

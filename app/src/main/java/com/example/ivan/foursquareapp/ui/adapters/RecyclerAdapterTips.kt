@@ -1,11 +1,11 @@
-package com.example.ivan.foursquareapp.ui
+package com.example.ivan.foursquareapp.ui.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ivan.foursquareapp.R
-import com.example.ivan.foursquareapp.models.ItemTips
+import com.example.ivan.foursquareapp.entity.ItemTips
 import kotlinx.android.synthetic.main.item_tip.view.*
 
 

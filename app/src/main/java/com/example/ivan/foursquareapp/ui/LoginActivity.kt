@@ -1,5 +1,6 @@
 package com.example.ivan.foursquareapp.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -19,6 +20,13 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
     @InjectPresenter
     lateinit var mPresenter: LoginPresenter
     private var mCallbackManager: CallbackManager? = null
+
+    companion object {
+        fun start(context: Context) {
+            val starter = Intent(context, LoginActivity::class.java)
+            context.startActivity(starter)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

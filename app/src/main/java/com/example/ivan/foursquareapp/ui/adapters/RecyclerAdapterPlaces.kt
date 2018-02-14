@@ -1,13 +1,13 @@
-package com.example.ivan.foursquareapp.ui
+package com.example.ivan.foursquareapp.ui.adapters
 
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.ivan.foursquareapp.GlideApp
+import com.example.ivan.foursquareapp.utils.GlideApp
 import com.example.ivan.foursquareapp.R
-import com.example.ivan.foursquareapp.models.ItemVenue
+import com.example.ivan.foursquareapp.entity.ItemVenue
 
 import java.util.ArrayList
 import kotlinx.android.synthetic.main.item_place.view.*

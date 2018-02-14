@@ -10,6 +10,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         app:title="Places"
+        android:elevation="4dp"
         app:titleTextColor="#FFF">
     </android.support.v7.widget.Toolbar>
 

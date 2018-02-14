@@ -3,10 +3,10 @@ package com.example.ivan.foursquareapp.presentation.places
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import com.example.ivan.foursquareapp.Constants
+import com.example.ivan.foursquareapp.utils.Constants
 import com.example.ivan.foursquareapp.PlacesApplication
-import com.example.ivan.foursquareapp.data.PlaceRepository
-import com.example.ivan.foursquareapp.models.PlacesResponse
+import com.example.ivan.foursquareapp.model.repository.PlaceRepository
+import com.example.ivan.foursquareapp.entity.PlacesResponse
 
 import java.util.HashMap
 

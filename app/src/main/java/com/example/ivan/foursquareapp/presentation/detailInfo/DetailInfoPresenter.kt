@@ -1,12 +1,12 @@
-package com.example.ivan.foursquareapp.presentation
+package com.example.ivan.foursquareapp.presentation.detailInfo
 
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import com.example.ivan.foursquareapp.Constants
+import com.example.ivan.foursquareapp.utils.Constants
 import com.example.ivan.foursquareapp.PlacesApplication
-import com.example.ivan.foursquareapp.data.DetailInfoRepository
-import com.example.ivan.foursquareapp.models.DetailInfoResponse
+import com.example.ivan.foursquareapp.model.repository.DetailInfoRepository
+import com.example.ivan.foursquareapp.entity.DetailInfoResponse
 import io.reactivex.observers.DisposableSingleObserver
 import java.util.*
 import javax.inject.Inject
