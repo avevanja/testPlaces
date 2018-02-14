@@ -1,5 +1,6 @@
 package com.example.ivan.foursquareapp.di
 
+import com.example.ivan.foursquareapp.presentation.DetailInfoPresenter
 import com.example.ivan.foursquareapp.presentation.places.PlacesPresenter
 import dagger.Component
 
@@ -8,5 +9,7 @@ interface AppComponent {
 
 
     fun inject(placesPresenter: PlacesPresenter)
+
+    fun inject(detailInfo: DetailInfoPresenter)
 
 }

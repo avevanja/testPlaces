@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.ivan.foursquareapp.GlideApp
 import com.example.ivan.foursquareapp.R
-import com.example.ivan.foursquareapp.models.DetailnfoVenue
 import com.example.ivan.foursquareapp.models.ItemVenue
 
 import java.util.ArrayList
@@ -38,7 +37,7 @@ class RecyclerAdapterPlaces(private val mListener: ItemClick) : RecyclerView.Ada
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         init {
-            itemView.setOnClickListener { mListener.itemClick(initDetails(mListVenues[adapterPosition])) }
+            itemView.setOnClickListener { mListener.itemClick(mListVenues[adapterPosition].venue!!.id!!) }
             itemView.textViewPhone.setOnClickListener { mListener.phoneClick(itemView.textViewPhone.text.toString()) }
         }
 
@@ -55,17 +54,10 @@ class RecyclerAdapterPlaces(private val mListener: ItemClick) : RecyclerView.Ada
             if (itemVenue.venue!!.hours != null)
                 itemView.textViewOpen.text = if (itemVenue.venue!!.hours!!.isOpen) "open" else "close"
         }
-
-        private fun initDetails(itemVenue: ItemVenue): DetailnfoVenue {
-            with(itemVenue.venue!!.photos!!.groups[0].items[0]) {
-                return DetailnfoVenue(itemVenue.venue!!.stats!!.usersCount!!, itemVenue.venue!!.rating!!,
-                        prefix + "600x400" + suffix, itemVenue.tips!!)
-            }
-        }
     }
 
     interface ItemClick {
-        fun itemClick(venue: DetailnfoVenue)
+        fun itemClick(venueId: String)
         fun phoneClick(phone: String)
     }
 }

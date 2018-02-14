@@ -8,6 +8,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.ivan.foursquareapp.R
 import com.example.ivan.foursquareapp.presentation.auth.LoginPresenter
 import com.example.ivan.foursquareapp.presentation.auth.LoginView
+import com.example.ivan.foursquareapp.utils.getIsLogin
 import com.facebook.CallbackManager
 import com.facebook.FacebookException
 import kotlinx.android.synthetic.main.activity_login.*
@@ -24,12 +25,13 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
         mCallbackManager = CallbackManager.Factory.create()
         setContentView(R.layout.activity_login)
         initUi()
+        if (getIsLogin())
+            successLogin()
     }
 
 
-
     private fun initUi() {
-        loginButton.setOnClickListener{mPresenter.login(this, mCallbackManager) }
+        loginButton.setOnClickListener { mPresenter.login(this, mCallbackManager) }
     }
 
     override fun successLogin() {

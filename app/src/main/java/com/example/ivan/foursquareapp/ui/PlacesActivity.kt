@@ -13,7 +13,6 @@ import android.support.v7.widget.RecyclerView
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.ivan.foursquareapp.R
-import com.example.ivan.foursquareapp.models.DetailnfoVenue
 import com.example.ivan.foursquareapp.models.ItemVenue
 import com.example.ivan.foursquareapp.presentation.places.PlacesPresenter
 import com.example.ivan.foursquareapp.presentation.places.PlacesView
@@ -104,8 +103,8 @@ class PlacesActivity : MvpAppCompatActivity(), RecyclerAdapterPlaces.ItemClick, 
     }
 
 
-    override fun itemClick(venue: DetailnfoVenue) {
-        DetailVenueActivity.start(this, venue)
+    override fun itemClick(venueId: String) {
+        DetailVenueActivity.start(this, venueId)
     }
 
     override fun phoneClick(phone: String) {

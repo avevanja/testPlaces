@@ -5,6 +5,7 @@ import android.app.Activity
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import com.example.ivan.foursquareapp.utils.setIsLogin
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -24,6 +25,7 @@ class LoginPresenter : MvpPresenter<LoginView>() {
         loginManager.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 viewState.successLogin()
+                setIsLogin(true)
             }
 
             override fun onCancel() {
